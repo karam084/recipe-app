@@ -9,12 +9,23 @@ class RecipefoodsController < ApplicationController
 
   def new
     @recipefood = Recipefood.new
+    @foods = current_user.foods
+    @food_items = []
+    @foods.map do |food|
+      @food_items << [food.name, food.id]
+    end
+    @recipe = current_user.recipes
+    @recipe_items = []
+    @recipe.map do |recipe|
+      @recipe_items << [recipe.name, recipe.id]
+    end
   end
 
   def edit; end
 
   def create
     @recipefood = Recipefood.new(recipefood_params)
+    @recipe = current_user.recipes.find_by(id: params[:recipe_id])
 
     respond_to do |format|
       if @recipefood.save
@@ -55,6 +66,6 @@ class RecipefoodsController < ApplicationController
   end
 
   def recipefood_params
-    params.require(:recipefood).permit(:quantity)
+    params.require(:recipefood).permit(:quantity, :food_id, :recipe_id)
   end
 end

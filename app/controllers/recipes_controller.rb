@@ -51,6 +51,8 @@ class RecipesController < ApplicationController
 
   def public
     @public_recipies = Recipe.where(public: 'true')
+    @user = current_user
+    @recipe = Recipe.all
   end
 
   private
