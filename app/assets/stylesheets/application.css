@@ -32,6 +32,7 @@ ul {
 .nav_list {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .nav_list li {
@@ -41,7 +42,7 @@ ul {
 .container_navbar {
   display: flex;
   justify-content: space-between;
-  background-color: burlywood;
+  background-color: rgb(107, 72, 94);
   align-items: center;
 }
 
@@ -55,7 +56,23 @@ ul {
 }
 
 .sign_out {
-  background-color: red;
+  background-color: hsl(11deg 100% 62%);
   padding: 0.5rem;
   border: none;
+}
+
+h1 {
+  margin: 5px;
+}
+
+form {
+  margin: 5px;
+}
+
+.container {
+  width: 100%;
+}
+
+.submit-button {
+  text-align: center;
 }
