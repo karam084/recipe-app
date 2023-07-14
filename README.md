@@ -129,7 +129,7 @@ REQUIRED SECTIONS:
 ### Install
 
  - bundle install
- - rails db:migrate
+ - rails db: migrate
 
 ### Usage
 
